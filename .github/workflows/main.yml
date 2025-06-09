@@ -37,3 +37,4 @@ jobs:
           -Dsonar.organization=jorgerodriguez
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.java.binaries=target/classes
