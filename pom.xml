@@ -15,12 +15,10 @@
         <quarkus.platform.version>3.23.2</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
-    </properties>
-    <properties>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.organization>jorgerodriguez</sonar.organization>
     </properties>
-
+   
     <dependencyManagement>
         <dependencies>
             <dependency>
