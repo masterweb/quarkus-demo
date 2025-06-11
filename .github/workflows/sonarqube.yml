@@ -43,7 +43,6 @@ jobs:
             echo "❌ Quality Gate fallido"
             exit 1
           fi
-          
     - name: Crear issue si Quality Gate falla
       if: failure()
       uses: peter-evans/create-issue-from-file@v4
