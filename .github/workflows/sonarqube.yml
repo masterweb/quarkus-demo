@@ -30,13 +30,13 @@ jobs:
       run: mvn clean verify
 
     - name: Run SonarCloud Analysis
-      run: mvn verify sonar:sonar -Dsonar.projectKey=jfragoso_quarkus-demo -Dsonar.organization=jfragoso -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.java.binaries=target/classes
+      run: mvn verify sonar:sonar -Dsonar.projectKey=jorgerodriguez_quarkus-demo -Dsonar.organization=jorgerodriguez -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.java.binaries=target/classes
             
     - name: Verificar Quality Gate via API
       run: |
           sleep 10  # espera a que SonarCloud procese
           STATUS=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" \
-            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=jfragoso_quarkus-demo" \
+            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=jorgerodriguez_quarkus-demo" \
             | jq -r '.projectStatus.status')
           echo "Estado Quality Gate: $STATUS"
           if [ "$STATUS" != "OK" ]; then
